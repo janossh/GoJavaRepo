@@ -45,7 +45,7 @@ public class MainController implements Initializable {
     public void settingsButtonAction(ActionEvent event) throws Exception {
 
         FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("../windows/settingswindow.fxml"));
-        Parent root = (Parent) fxmlLoader1.load();
+        Parent root = fxmlLoader1.load();
         SettingsController settingsController = (SettingsController) fxmlLoader1.getController();
 
         BorderPane borderPane = (BorderPane) ((Node) event.getSource()).getParent().getScene().getRoot();
