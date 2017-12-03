@@ -24,6 +24,8 @@ public class MainController implements Initializable {
     @FXML
     private Hyperlink youTubeLink;
     @FXML
+    private MenuItem goHomeMenuItem;
+    @FXML
     private Hyperlink settingsLink;
 
     @FXML
@@ -55,10 +57,10 @@ public class MainController implements Initializable {
 
         settingsController.getUseCache().setText("" + Settings.isUseCache());
         settingsController.getCachePath().setText(Settings.getCachePath());
+        settingsController.getLabelCurentCachePath().setText(Settings.getCachePath());
         settingsController.getShowLeadTime().setText("" + Settings.isShowLeadTime());
 
     }
-
 
     @FXML
     public void youTubeButtonAction(ActionEvent event) throws Exception {
@@ -68,6 +70,19 @@ public class MainController implements Initializable {
             ContextMenu contextMenu = hyperlinkYouTube.getContextMenu();
             contextMenu.show(hyperlinkYouTube, Side.BOTTOM, 70, 0);
         }
+
+
+    }
+
+    @FXML
+    public void goHomeAction(ActionEvent event) {
+        showMainWindow(event);
+    }
+
+    private void showMainWindow(ActionEvent actionEvent) {
+        BorderPane borderPane = (BorderPane) youTubeLink.getParent().getParent().getScene().getRoot();
+        AnchorPane field = (AnchorPane) borderPane.getCenter();
+        field.getChildren().clear();
     }
 
     @Override

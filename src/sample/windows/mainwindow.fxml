@@ -21,7 +21,7 @@
                <contextMenu>
                   <ContextMenu onAction="#youTubeButtonAction">
                     <items>
-                       <MenuItem mnemonicParsing="false" text="[0] GoHome..." />
+                       <MenuItem fx:id="goHomeMenuItem" mnemonicParsing="false" onAction="#goHomeAction" text="[0] GoHome..." />
                       <MenuItem mnemonicParsing="false" text="[I] Отобразить глобальную информацию о канале" />
                         <MenuItem mnemonicParsing="false" text="[II] Сравнить глобальную информацию о каналах " />
                         <MenuItem mnemonicParsing="false" text="[III] Сортировать каналы по их данным" />

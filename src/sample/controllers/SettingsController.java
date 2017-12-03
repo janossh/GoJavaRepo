@@ -6,6 +6,7 @@ import javafx.fxml.Initializable;
 import javafx.scene.Node;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -22,6 +23,8 @@ public class SettingsController implements Initializable {
     @FXML
     private TextField cachePath;
     @FXML
+    private Label labelCurentCachePath;
+    @FXML
     private TextField showLeadTime;
 
     @FXML
@@ -29,6 +32,10 @@ public class SettingsController implements Initializable {
 
     @FXML
     private Button canselButton;
+
+    public Label getLabelCurentCachePath() {
+        return labelCurentCachePath;
+    }
 
     public TextField getUseCache() {
         return useCache;
