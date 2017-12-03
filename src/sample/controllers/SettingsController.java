@@ -4,6 +4,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.Node;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -56,14 +57,22 @@ public class SettingsController implements Initializable {
     @FXML
     public void saveSettingsAction(ActionEvent event) throws Exception {
         if ((showLeadTime.getText().compareToIgnoreCase("true") == 0 || showLeadTime.getText().compareToIgnoreCase("false") == 0) &&
-                useCache.getText().compareToIgnoreCase("true") == 0 || useCache.getText().compareToIgnoreCase("false") == 0) {
+                (useCache.getText().compareToIgnoreCase("true") == 0 || useCache.getText().compareToIgnoreCase("false") == 0)) {
             Settings.setCachePath(cachePath.getText());
             Settings.setShowLeadTime(showLeadTime.getText().compareToIgnoreCase("true") == 0);
             Settings.setUseCache(useCache.getText().compareToIgnoreCase("true") == 0);
             Settings.saveSettings();
             showMainWindow(event);
         } else {
-            throw new Exception("Error of values");
+
+            Alert alert = new Alert(Alert.AlertType.INFORMATION);
+
+            alert.setTitle("Information");
+            alert.setHeaderText(null);
+            alert.setContentText("Invalid values. Enter \"TRUE\" or \"FALSE\"");
+
+            alert.showAndWait();
+
         }
     }
 
