@@ -15,6 +15,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import sample.Settings;
 
+import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -79,8 +80,44 @@ public class MainController implements Initializable {
         showMainWindow(event);
     }
 
+    @FXML
+    public void $1Action(ActionEvent event) {
+        requestShowGlobalInformation();
+    }
+
+    @FXML
+    public void $2Action(ActionEvent event) {
+        requestShowGlobalInformation();
+    }
+
+    @FXML
+    public void $3Action(ActionEvent event) {
+        requestShowGlobalInformation();
+    }
+
+    private void requestShowGlobalInformation() {
+        FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("../windows/requestwindows/requestshowglobalinformation.fxml"));
+        Parent root = null;
+        try {
+            root = fxmlLoader1.load();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        ShowGlobalInformationController showGlobalInformationController = (ShowGlobalInformationController) fxmlLoader1.getController();
+
+        BorderPane borderPane = (BorderPane) youTubeLink.getParent().getScene().getRoot();
+        AnchorPane field = (AnchorPane) borderPane.getCenter();
+        field.getChildren().clear();
+        field.setBottomAnchor(root, 10.0);
+        field.setRightAnchor(root, 10.0);
+        field.setTopAnchor(root, 10.0);
+        field.setLeftAnchor(root, 10.0);
+        field.getChildren().addAll(root);
+
+    }
+
     private void showMainWindow(ActionEvent actionEvent) {
-        BorderPane borderPane = (BorderPane) youTubeLink.getParent().getParent().getScene().getRoot();
+        BorderPane borderPane = (BorderPane)youTubeLink.getParent().getParent().getScene().getRoot();
         AnchorPane field = (AnchorPane) borderPane.getCenter();
         field.getChildren().clear();
     }

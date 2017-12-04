@@ -13,3 +13,9 @@
     -fx-font-weight: normal;
     -fx-underline: false;
 }
+.mySimpleText{
+    -fx-text-fill: #aaaabf;
+    -fx-font-style: normal;
+    -fx-font-weight: normal;
+    -fx-underline: false;
+}

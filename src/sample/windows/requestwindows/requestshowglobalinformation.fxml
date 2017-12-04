@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+
+<AnchorPane prefHeight="546.0" prefWidth="630.0" stylesheets="@../../stylesheets/myLink.css" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.controllers.ShowGlobalInformationController">
+   <children>
+      <Button fx:id="buttonGo" layoutX="473.0" layoutY="361.0" mnemonicParsing="false" onAction="#buttonGoAction" prefHeight="25.0" prefWidth="51.0" text="Go" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="76.0" />
+      <Button fx:id="buttonCansel" layoutX="535.0" layoutY="361.0" mnemonicParsing="false" onAction="#buttonCanselAction" text="Cansel" AnchorPane.bottomAnchor="14.0" AnchorPane.rightAnchor="14.0" />
+      <Label layoutX="14.0" layoutY="21.0" prefHeight="21.0" prefWidth="635.0" styleClass="myText" text="[I] Show global information about channel/[II] Compare global information about channels" AnchorPane.leftAnchor="14.0" />
+      <Label layoutX="14.0" layoutY="53.0" prefHeight="17.0" prefWidth="305.0" styleClass="mySimpleText" text="1. The channel's title" AnchorPane.leftAnchor="14.0" />
+      <Label layoutX="14.0" layoutY="70.0" prefHeight="17.0" prefWidth="382.0" styleClass="mySimpleText" text="2. The date and time that the channel was created" AnchorPane.leftAnchor="14.0" />
+      <Label layoutX="14.0" layoutY="87.0" prefHeight="17.0" prefWidth="512.0" styleClass="mySimpleText" text="3. The number of subscribers that the channel has" AnchorPane.leftAnchor="14.0" />
+      <Label layoutX="14.0" layoutY="104.0" prefHeight="17.0" prefWidth="512.0" styleClass="mySimpleText" text="4. The number of videos uploaded to the channel" AnchorPane.leftAnchor="14.0" />
+      <Label layoutX="14.0" layoutY="121.0" styleClass="mySimpleText" text="5. The number of times the channel has been viewed" AnchorPane.leftAnchor="14.0" />
+      <Label layoutX="14.0" layoutY="173.0" prefHeight="17.0" prefWidth="208.0" styleClass="mySimpleText" text="Enter channel Id/Id's) through a space:" AnchorPane.leftAnchor="14.0" />
+      <Separator layoutX="14.0" layoutY="140.0" prefHeight="0.0" prefWidth="573.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="13.0" />
+      <TextField fx:id="stringOfCannelIds" layoutX="14.0" layoutY="197.0" prefHeight="25.0" prefWidth="692.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="197.0" />
+      <Label layoutX="14.0" layoutY="150.0" styleClass="mySimpleText" text="You can enter one or two channels for comparison" AnchorPane.leftAnchor="14.0" />
+      <TextArea fx:id="resultString" layoutX="14.0" layoutY="250.0" prefHeight="250.0" prefWidth="692.0" AnchorPane.bottomAnchor="46.0" AnchorPane.leftAnchor="14.0" AnchorPane.rightAnchor="13.0" AnchorPane.topAnchor="250.0" />
+      <Label layoutX="14.0" layoutY="227.0" styleClass="mySimpleText" text="Result:" />
+   </children>
+</AnchorPane>

@@ -22,9 +22,9 @@
                   <ContextMenu onAction="#youTubeButtonAction">
                     <items>
                        <MenuItem fx:id="goHomeMenuItem" mnemonicParsing="false" onAction="#goHomeAction" text="[0] GoHome..." />
-                      <MenuItem mnemonicParsing="false" text="[I] Отобразить глобальную информацию о канале" />
-                        <MenuItem mnemonicParsing="false" text="[II] Сравнить глобальную информацию о каналах " />
-                        <MenuItem mnemonicParsing="false" text="[III] Сортировать каналы по их данным" />
+                      <MenuItem mnemonicParsing="false" onAction="#$1Action" text="[I] Отобразить глобальную информацию о канале" />
+                        <MenuItem mnemonicParsing="false" onAction="#$2Action" text="[II] Сравнить глобальную информацию о каналах " />
+                        <MenuItem mnemonicParsing="false" onAction="#$3Action" text="[III] Сортировать каналы по их данным" />
                         <MenuItem mnemonicParsing="false" text="[IV] Медиа резонанс" />
                         <MenuItem mnemonicParsing="false" text="[V] Сравнить Медиа резонанс" />
                         <MenuItem mnemonicParsing="false" text="[VI] Сортировать по Медиа резонансу" />

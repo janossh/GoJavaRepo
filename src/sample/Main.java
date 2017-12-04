@@ -19,6 +19,9 @@ public class Main extends Application {
         Parent root = FXMLLoader.load(getClass().getResource("windows/mainwindow.fxml"));
         primaryStage.setTitle("Java Core - финальное задание");
         Scene scene = new Scene(root, 900, 650);
+
+        primaryStage.setMinHeight(650);
+        primaryStage.setMinWidth(650);
         primaryStage.setScene(scene);
         primaryStage.show();
     }
