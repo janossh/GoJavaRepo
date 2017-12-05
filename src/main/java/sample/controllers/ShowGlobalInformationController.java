@@ -39,11 +39,11 @@ public class ShowGlobalInformationController {
         }
         if (ids.size() == 1) {
             ArrayList<ChannelResponse> channelResponses = new ArrayList<ChannelResponse>();
-
+            Date start = new Date();
             try {
-                Date start = new Date();
+
                 ArrayList<ChannelResponse> items = ChannelRequest.getChannelResponse(channelIdsString.getText()).getItems();
-                Date end = new Date();
+
                 for (ChannelResponse request : items) {
 
                     channelResponses.add(request);
@@ -54,7 +54,7 @@ public class ShowGlobalInformationController {
             } catch (UnirestException e) {
                 e.printStackTrace();
             }
-
+            Date end = new Date();
             if (channelResponses.size() == 1) {
 
                 String result = //channelResponses.get(0).getId() + System.lineSeparator() +
