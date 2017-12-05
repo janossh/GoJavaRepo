@@ -34,7 +34,7 @@ public class MainController implements Initializable {
 
         Stage window = new Stage();
         window.initModality(Modality.APPLICATION_MODAL);
-        Parent root = FXMLLoader.load(getClass().getResource("../windows/helpwindow.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/windows/helpwindow.fxml"));
 
         Scene scene = new Scene(root);
         window.setResizable(false);
@@ -47,7 +47,7 @@ public class MainController implements Initializable {
     @FXML
     public void settingsButtonAction(ActionEvent event) throws Exception {
 
-        FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("../windows/settingswindow.fxml"));
+        FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("/windows/settingswindow.fxml"));
         Parent root = fxmlLoader1.load();
         SettingsController settingsController = (SettingsController) fxmlLoader1.getController();
 
@@ -96,7 +96,7 @@ public class MainController implements Initializable {
     }
 
     private void requestShowGlobalInformation() {
-        FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("../windows/requestwindows/requestshowglobalinformation.fxml"));
+        FXMLLoader fxmlLoader1 = new FXMLLoader(getClass().getResource("/windows/requestwindows/requestshowglobalinformation.fxml"));
         Parent root = null;
         try {
             root = fxmlLoader1.load();

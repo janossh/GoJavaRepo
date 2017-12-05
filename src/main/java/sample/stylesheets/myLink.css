@@ -1,0 +1,21 @@
+.myLink,.myLink:default,.myLink:visited {
+    -fx-text-fill: #aaaabf;;
+    -fx-font-size: 12pt;
+    -fx-font-style: normal;
+    -fx-font-weight: normal;
+    -fx-underline: false;
+
+}
+.myText{
+    -fx-text-fill: #aaaabf;;
+    -fx-font-size: 11pt;
+    -fx-font-style: normal;
+    -fx-font-weight: normal;
+    -fx-underline: false;
+}
+.mySimpleText{
+    -fx-text-fill: #aaaabf;
+    -fx-font-style: normal;
+    -fx-font-weight: normal;
+    -fx-underline: false;
+}

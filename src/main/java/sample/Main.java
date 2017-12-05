@@ -16,7 +16,7 @@ public class Main extends Application {
         Settings settings = new Settings();
         settings.initializeSettings();
 
-        Parent root = FXMLLoader.load(getClass().getResource("windows/mainwindow.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("/windows/mainwindow.fxml"));
         primaryStage.setTitle("Java Core - финальное задание");
         Scene scene = new Scene(root, 900, 650);
 

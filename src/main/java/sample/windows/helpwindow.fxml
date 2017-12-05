@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="337.0" prefWidth="404.0" xmlns="http://javafx.com/javafx/8.0.141" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <TextArea editable="false" layoutX="18.0" layoutY="16.0" prefHeight="313.0" prefWidth="379.0" text="Приложение для анализа YouTube каналов, сбора статистики&#10;и сравнения каналов по различным пользовательским &#10;запросам.&#10;&#10;Время на выполнение этого задания - 2 недели.&#10;Работаем в командах. Команда может дробить задачи между &#10;собой как пожелает. Но в итоге должно быть целостное &#10;приложение.&#10;&#10;Версия 0.0.0.1&#10;&#10;Разработчики: &#10;&#10;           Карина Амбарцумян, Роман Булах, &#10;           Андрей Чепендюк, Владислав Кучеровский&#10;&#10;                                                                                 GoIT 2017(c)" />
+   </children>
+</Pane>
