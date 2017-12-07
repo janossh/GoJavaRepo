@@ -2,8 +2,10 @@ package sample.firstrequest.jsonObjects;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
+import java.io.Serializable;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class Statistics {
+public class Statistics implements Serializable{
     private Long subscriberCount;
     private Long videoCount;
     private Long viewCount;

@@ -12,6 +12,7 @@ import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import sample.Settings;
 
+import java.io.File;
 import java.net.URL;
 import java.util.ResourceBundle;
 
@@ -63,9 +64,10 @@ public class SettingsController implements Initializable {
 
     @FXML
     public void saveSettingsAction(ActionEvent event) throws Exception {
-        if ((showLeadTime.getText().compareToIgnoreCase("true") == 0 || showLeadTime.getText().compareToIgnoreCase("false") == 0) &&
+        File path = new File(cachePath.getText());
+        if ((path.exists()&&path.isDirectory())&&(showLeadTime.getText().compareToIgnoreCase("true") == 0 || showLeadTime.getText().compareToIgnoreCase("false") == 0) &&
                 (useCache.getText().compareToIgnoreCase("true") == 0 || useCache.getText().compareToIgnoreCase("false") == 0)) {
-            Settings.setCachePath(cachePath.getText());
+            Settings.setCachePath(path.getPath()+"/");
             Settings.setShowLeadTime(showLeadTime.getText().compareToIgnoreCase("true") == 0);
             Settings.setUseCache(useCache.getText().compareToIgnoreCase("true") == 0);
             Settings.saveSettings();
@@ -76,7 +78,7 @@ public class SettingsController implements Initializable {
 
             alert.setTitle("Information");
             alert.setHeaderText(null);
-            alert.setContentText("Invalid values. Enter \"TRUE\" or \"FALSE\"");
+            alert.setContentText("Check values. Cache path or enter \"TRUE\" or \"FALSE\"");
 
             alert.showAndWait();
 

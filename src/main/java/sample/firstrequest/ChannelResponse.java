@@ -3,8 +3,11 @@ package sample.firstrequest;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import sample.firstrequest.jsonObjects.Snippet;
 import sample.firstrequest.jsonObjects.Statistics;
+
+import java.io.Serializable;
+
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class ChannelResponse {
+public class ChannelResponse implements Serializable{
     private String id;
     private Snippet snippet;
     private Statistics statistics;
