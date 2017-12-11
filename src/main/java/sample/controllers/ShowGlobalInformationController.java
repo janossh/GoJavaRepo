@@ -6,11 +6,13 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import sample.Settings;
+import sample.comparators.*;
 import sample.firstrequest.ChannelRequest;
 import sample.firstrequest.ChannelResponse;
 
 import java.io.*;
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.Date;
 
 public class ShowGlobalInformationController {
@@ -82,33 +84,57 @@ public class ShowGlobalInformationController {
 
         Date end = new Date();
 
-        if (ids.size() == 1 || ids.size() == 2) {
+        // if (ids.size() == 1 || ids.size() == 2) {
 
-            if (channelResponses.size() == 1 || channelResponses.size() == 2) {
+        if (channelResponses.size() == 1 || channelResponses.size() == 2) {
 
-                String result = perfomResult(channelResponses, 0);
-                //channelResponses.get(0).getId() + System.lineSeparator() +
+            String result = perfomResult(channelResponses, 0);
+            //channelResponses.get(0).getId() + System.lineSeparator() +
 
-                if (Settings.isShowLeadTime()) {
-                    result += System.lineSeparator() + "6. LeadTime -- " + ((double) (end.getTime() - start.getTime()) / 1000) + " second(s)";
-                }
-                resultString.setText(result);
-                resultString2.setVisible(false);
+            if (Settings.isShowLeadTime()) {
+                result += System.lineSeparator() + "6. LeadTime -- " + ((double) (end.getTime() - start.getTime()) / 1000) + " second(s)";
             }
-
-            if (channelResponses.size() == 2) {
-
-                String result = perfomResult(channelResponses, 1);
-                //channelResponses.get(0).getId() + System.lineSeparator() +
-
-                if (Settings.isShowLeadTime()) {
-                    result += System.lineSeparator() + "6. LeadTime -- " + ((double) (end.getTime() - start.getTime()) / 1000) + " second(s)";
-                }
-                resultString2.setText(result);
-                resultString2.setVisible(true);
-            }
-
+            resultString.setText(result);
+            resultString2.setVisible(false);
         }
+
+        if (channelResponses.size() == 2) {
+
+            String result = perfomResult(channelResponses, 1);
+            //channelResponses.get(0).getId() + System.lineSeparator() +
+
+            if (Settings.isShowLeadTime()) {
+                result += System.lineSeparator() + "6. LeadTime -- " + ((double) (end.getTime() - start.getTime()) / 1000) + " second(s)";
+            }
+            resultString2.setText(result);
+            resultString2.setVisible(true);
+        }
+
+        //}
+
+        if (channelResponses.size() > 2) {
+            Comparator<ChannelResponse> channelResponseComparator = new ChannelResponseTitleComparator()
+                    .thenComparing(new ChannelResponseDateComparator())
+                    .thenComparing(new ChannelResponseSubscriberCountComparator())
+                    .thenComparing(new ChannelResponseVideoCountComparator())
+                    .thenComparing(new ChannelResponseViewCountComparator());
+
+            channelResponses.sort(channelResponseComparator);
+
+            String result = "";
+            for (int i = 0; i < channelResponses.size(); i++) {
+                result += perfomResult(channelResponses, i) + System.lineSeparator();
+            }
+
+
+            if (Settings.isShowLeadTime()) {
+                result += System.lineSeparator() + "6. LeadTime -- " + ((double) (end.getTime() - start.getTime()) / 1000) + " second(s)";
+            }
+
+            resultString.setText(result);
+            resultString2.setVisible(false);
+        }
+
 
     }
 
@@ -117,7 +143,7 @@ public class ShowGlobalInformationController {
                 "2. " + channelResponses.get(index).getSnippet().getPublishedAt() + System.lineSeparator() +
                 "3. " + channelResponses.get(index).getStatistics().getSubscriberCount() + System.lineSeparator() +
                 "4. " + channelResponses.get(index).getStatistics().getVideoCount() + System.lineSeparator() +
-                "5. " + channelResponses.get(index).getStatistics().getViewCount();
+                "5. " + channelResponses.get(index).getStatistics().getViewCount() + System.lineSeparator();
     }
 
     private void saveObjectToFile(String fileName, ChannelResponse obj) {
